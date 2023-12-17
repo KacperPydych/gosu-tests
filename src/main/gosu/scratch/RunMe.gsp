@@ -5,54 +5,55 @@ uses java.lang.Math
 uses java.util.Random
 
 var los = {"papier", "kamien", "nozyce"}
-print("wybierz 1-papier,2-kamien,3-nozyce")
-var randomIndex = Math.floor(Math.random() * los.size());
-
 var reader = new BufferedReader(new InputStreamReader(System.in))
+
+function gra(){
+var randomIndex = Math.floor(Math.random() * los.size());
+print("wybierz papier,kamien,nozyce")
 var input = reader.readLine()
 
   
-   if(input ==1){
+   if(input.equals("papier")){
    if (randomIndex==0){
-     print("remis")
+     print("komputer wybral papier - remis")
      
    }
    else if (randomIndex==1){
-     print("wygrana")
+     print("komputer wybral kamien - wygrana")
      
    }
    else if (randomIndex==2){
-     print("przegrana")
+     print("komputer wybral nozyce - przegrana")
     
    }
    
   }
-  else if(input.equals(2)){
+  else if(input.equals("kamien")){
    if (randomIndex==0){
-     print("remis")
+     print("komputer wybral papier - przegrana")
      
    }
    if (randomIndex==1){
-     print("wygrana")
+     print("komputer wybral kamien - remis")
     
    }
    if (randomIndex==2){
-     print("przegrana")
+     print("komputer wybral nozyce - wygrana")
      
    }
    
   }
-  else if(input.equals(3)){
+  else if(input.equals("nozyce")){
    if (randomIndex==0){
-     print("remis")
+     print("komputer wybral papier - wygrana")
    
    }
    if (randomIndex==1){
-     print("wygrana")
+     print("komputer wybral kamien - przegrana")
    
    }
    if (randomIndex==2){
-     print("przegrana")
+     print("komputer wybral nozyce - remis")
     
    }
    
@@ -61,9 +62,8 @@ var input = reader.readLine()
     print("zly wybor")
    
   }
-print(input)
+  gra()
+}
   
-
-
-  
+gra() 
 
